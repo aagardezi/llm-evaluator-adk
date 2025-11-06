@@ -1,0 +1,12 @@
+google-adk
+finnhub-python
+requests
+beautifulsoup4
+google-cloud-secret-manager
+google-auth
+google-cloud-bigquery
+pandas
+db-dtypes
+litellm
+openai-agents[litellm]
+anthropic[vertex]
