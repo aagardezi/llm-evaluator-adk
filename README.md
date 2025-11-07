@@ -28,7 +28,7 @@ The agent architecture is as follows:
 
 The evaluator agent then provides an overall winner among the three LLMs.
 
-
+![alt text](https://github.com/aagardezi/llm-evaluator-adk/blob/main/agent.png)
 
 ## Use Cases
 
