@@ -1,10 +1,14 @@
 import datetime
+import os
 from zoneinfo import ZoneInfo
 from google.adk.agents import Agent, ParallelAgent, SequentialAgent, LlmAgent
 from google.adk.tools import agent_tool, AgentTool
 from google.adk.tools import google_search
 from .config import config
 import google.auth
+
+from . import helpercode
+
 
 from google.genai import types
 
@@ -18,6 +22,9 @@ from google.adk.models.lite_llm import LiteLlm
 from google.adk.models.anthropic_llm import Claude
 from google.adk.models.registry import LLMRegistry
 
+PROJECT_ID = helpercode.get_project_id()
+
+os.environ["OPENAI_API_KEY"] = helpercode.access_secret_version(PROJECT_ID, "OpenAIAccessKey")
 
 agent_openai = LlmAgent(
     model=LiteLlm(model=config.openai_litellm_model), # LiteLLM model string format
